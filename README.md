@@ -1,134 +1,165 @@
-🏦 Banking Management System (Core Java)
+# 🏦 Smart Banking System – Java Full Stack Project
 
-A console-based Banking Management System developed using Core Java and MySQL.
-This project simulates basic banking operations such as account creation, login, deposits, withdrawals, balance inquiry, and fund management.
+A **full-stack banking management system** built using **Java, Spring Boot, MySQL, HTML, CSS, and JavaScript**.  
+This project demonstrates real-world banking operations such as account creation, balance management, and data persistence using RESTful APIs.
 
-📌 Features
+---
 
-User Registration & Login
+## 🚀 Features
 
-Create Bank Account
+- Create bank accounts
+- View all bank accounts
+- REST API based backend
+- Spring Boot + JPA (Hibernate)
+- MySQL database integration
+- Simple frontend using HTML & JavaScript
+- MVC layered architecture
+- Ready to extend with authentication & transactions
 
-Deposit Money
+---
 
-Withdraw Money
+## 🧰 Tech Stack
 
-Check Account Balance
+### Backend
+- Java 17
+- Spring Boot
+- Spring MVC
+- Spring Data JPA
+- Hibernate
+- MySQL
 
-View Account Details
+### Frontend
+- HTML5
+- JavaScript (Fetch API)
 
-MySQL Database Integration
+### Tools
+- IntelliJ / Eclipse
+- Maven
+- MySQL Workbench
+- Postman
+- Git & GitHub
 
-Console-based Menu-driven Application
+---
 
-🛠️ Tech Stack
-Technology	Description
-Java	Core Java (JDK 8+)
-Database	MySQL
-IDE	IntelliJ IDEA / Eclipse
-JDBC	MySQL Connector
-📂 Project Structure
-Banking-Management-System
+## 🏗️ Project Structure
+
+Smart-Banking-System
 │
-├── src/
-│   └── BankingManagementSystem/
-│       ├── BankingApp.java        # Main class (Application Entry Point)
-│       ├── AccountManager.java    # Business logic for banking operations
-│       ├── Accounts.java          # Account entity class
-│       └── User.java              # User entity class
+├── backend
+│ ├── src/main/java/com/example/banking
+│ │ ├── controller
+│ │ ├── model
+│ │ ├── repository
+│ │ ├── service
+│ │ └── BankingApplication.java
+│ │
+│ ├── src/main/resources
+│ │ ├── static
+│ │ │ └── index.html
+│ │ └── application.properties
+│ │
+│ └── pom.xml
 │
-├── Database Schema.png             # Database design
-├── README.md
-└── .idea/                          # IDE configuration files
+└── README.md
 
-⚙️ Database Setup
+yaml
+Copy code
 
-Create a MySQL database:
+---
 
-CREATE DATABASE banking_system;
+## 🗄️ Database Configuration
 
+Create MySQL database:
 
-Create required tables (sample structure):
+```sql
+CREATE DATABASE banking_db;
+Update credentials in application.properties:
 
-CREATE TABLE users (
-    user_id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(100),
-    email VARCHAR(100),
-    password VARCHAR(100)
-);
+properties
+Copy code
+spring.datasource.url=jdbc:mysql://localhost:3306/banking_db
+spring.datasource.username=root
+spring.datasource.password=root
 
-CREATE TABLE accounts (
-    account_id INT AUTO_INCREMENT PRIMARY KEY,
-    user_id INT,
-    balance DOUBLE,
-    FOREIGN KEY (user_id) REFERENCES users(user_id)
-);
-
-
-Update your database credentials in the code (JDBC connection).
-
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
 ▶️ How to Run the Project
+Step 1️⃣
+Extract the ZIP file
 
-Clone the repository:
+Step 2️⃣
+Open the backend folder in IntelliJ / Eclipse
 
-git clone https://github.com/your-username/Banking-Management-System.git
+Step 3️⃣
+Run the application:
 
+bash
+Copy code
+BankingApplication.java
+Step 4️⃣
+Open browser:
 
-Open the project in IntelliJ / Eclipse
+bash
+Copy code
+http://localhost:8080/index.html
+🌐 REST API Endpoints
+➕ Create Account
+bash
+Copy code
+POST /api/accounts
+Request Body
 
-Add MySQL Connector JAR to your project:
+json
+Copy code
+{
+  "name": "Rohit",
+  "balance": 5000
+}
+📄 Get All Accounts
+bash
+Copy code
+GET /api/accounts
+🖥️ Frontend UI
+Simple account creation form
 
-mysql-connector-j-8.1.0.jar
+Displays all accounts dynamically
 
+Uses Fetch API to communicate with backend
 
-Configure database connection in code
+🔐 Future Enhancements
+User registration & login
 
-Run:
+JWT authentication
 
-BankingApp.java
+Deposit / Withdraw money
 
-🖥️ Application Flow
+Fund transfer between accounts
 
-User Registration
+Transaction history
 
-User Login
+Admin dashboard
 
-Banking Menu:
+Thymeleaf or React frontend
 
-Deposit
+PDF account statements
 
-Withdraw
+Docker deployment
 
-Check Balance
+🎯 Interview Concepts Covered
+Spring Boot architecture
 
-View Account Details
+REST API design
 
-Exit
+JPA & Hibernate
 
-📸 Screenshots
+MVC pattern
 
-Database Schema included as Database Schema.png
+Dependency Injection
 
-🚀 Future Enhancements
+Database relationships
 
-GUI using JavaFX or Swing
-
-Transaction History
-
-Admin Panel
-
-Password Encryption
-
-Exception Handling Improvements
-
-REST API using Spring Boot
+Full-stack integration
 
 👨‍💻 Author
-
 R Rohit
-Java Developer
-📧 Feel free to connect for suggestions or improvements
-
-📄 License
-
-This project is for learning and educational purposes.
+Java | Spring Boot | Full Stack Developer
